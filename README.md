@@ -33,7 +33,7 @@ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.5.0-cp27-none-l
 ```
 
 ## Step 5. Taking a snapshot of the Bare Metal Instance
-### Below command creates a snapshot.tar file in /tmp/ folder
+#### Below command creates a snapshot.tar file in /tmp/ folder
 ```
 tar cf /tmp/snapshot.tar / --selinux --acls --xattrs --numeric-owner --one-file-system --exclude=/tmp/* --exclude=/proc/* --exclude=/boot/extlinux 
 ```
@@ -43,7 +43,8 @@ cd /tmp
 ls
 ```
 
-## Step 6. Install the libguests-tools (BELOW STEPS ARE IMPORTANT)
+## Step 6. Install the libguests-tools 
+(BELOW STEPS ARE IMPORTANT)
 ```
 apt-get install libguestfs-tools (A pink screen will appear while installation, select the option as "yes")
 apt-get install kvm libvirt-bin virt-manager virt-viewer virt-top virt-what
@@ -71,7 +72,7 @@ virt-sysprep -a /tmp/snapshot.qcow2
 qemu-img convert /tmp/snapshot.qcow2 -O qcow2 /tmp/snapshot_compressed.qcow2 -c
 ```
 
-## Step 10. Install the glance-client if it is not available
+## Step 10. Install the glance-client (if it is not available)
 ```
 apt-get install python-glanceclient
 ```
