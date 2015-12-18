@@ -89,21 +89,27 @@ source openrc.sh
 
 *** (Just incase enter the password to your Bare-Metal password )***
 
-## Step 12. Then simply use the glance client program to upload your image. First, find the uuids of the kernel and ramdisk by typing: 
+## Step 12. Then simply use the glance client program to view your image. 
+### First, find the uuids of the kernel and ramdisk by typing: 
 ```
  glance image-list
 ```
-
-
+---
+ID |Name|Disk Format|Container Format|Size|Status|
+---|----|-----------|----------------|----|------|
  8ad7e4f4-7204-4aec-bd9d-4348ee5e7ddf | ubuntu-14-04               | qcow2       | bare             | 336656384  | active |
-| 02eded7f-1ea8-4011-afe3-51460b30c2e4 | ubuntu-14-04-initrd        | ari         | ari              | 24696115   | active |
-| bbe9bbc8-d90c-41d6-9cbd-85a6fce43bb2 | ubuntu-14-04-kernel        | aki         | aki              | 5820640    | active |
+| 02eded7f-1ea8-4011-afe3-51460b30c2e4 | ubuntu-14-04-initrd        | ari         | ari              | 24696115   | active|
+| bbe9bbc8-d90c-41d6-9cbd-85a6fce43bb2 | ubuntu-14-04-kernel        | aki         | aki              | 5820640    | active|
 
-# copy the aki id  -> bbe9bbc8-d90c-41d6-9cbd-85a6fce43bb2 and paste it in place of the kernel_id just like I have done below.
-# copy the ari id  -> 02eded7f-1ea8-4011-afe3-51460b30c2e4 and paste it in place of the ram_id just like I have done below
+---
 
+### copy the aki id  -> bbe9bbc8-d90c-41d6-9cbd-85a6fce43bb2 and paste it in place of the kernel_id just like shown in below command.
+### copy the ari id  -> 02eded7f-1ea8-4011-afe3-51460b30c2e4 and paste it in place of the ram_id just like shown in below command
+
+## Step 13. Create 
+```
 glance image-create --name my-snapshot --disk-format qcow2 --container-format bare --property kernel_id=bbe9bbc8-d90c-41d6-9cbd-85a6fce43bb2 --property ramdisk_id=02eded7f-1ea8-4011-afe3-51460b30c2e4 < /tmp/snapshot_compressed.qcow2
-
+```
  
 
 
