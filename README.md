@@ -106,7 +106,7 @@ ID |Name|Disk Format|Container Format|Size|Status|
 ### copy the aki id  -> bbe9bbc8-d90c-41d6-9cbd-85a6fce43bb2 and paste it in place of the kernel_id just like shown in below command.
 ### copy the ari id  -> 02eded7f-1ea8-4011-afe3-51460b30c2e4 and paste it in place of the ram_id just like shown in below command
 
-## Step 13. Create 
+## Step 13. Finally, you the below command to create an image
 ```
 glance image-create --name my-snapshot --disk-format qcow2 --container-format bare --property kernel_id=bbe9bbc8-d90c-41d6-9cbd-85a6fce43bb2 --property ramdisk_id=02eded7f-1ea8-4011-afe3-51460b30c2e4 < /tmp/snapshot_compressed.qcow2
 ```
